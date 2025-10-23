@@ -1,0 +1,19 @@
+body{
+    margin: 0px;
+}
+
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #50514F;
+    padding: 1rem;
+}
+
+.nav_left{
+    text-align: left;
+}
+
+.nav_right{
+    text-align: center;
+}
+
