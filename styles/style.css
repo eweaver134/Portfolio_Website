@@ -2,3 +2,13 @@ body{
     background-color: blue;
     color: red;
 }
+
+.main_section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sub_section{
+    color: white;
+    text-align: center;
+}
