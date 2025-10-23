@@ -5,15 +5,58 @@ body{
 .nav{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: #50514F;
+    background-color: #40413f;
     padding: 1rem;
 }
 
 .nav_left{
     text-align: left;
+    padding: 1em;
+    color: #FFFAEB;
+    font-size: 1.5em;
 }
 
 .nav_right{
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+.nav_card{
+    color: #FFFAEB;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    font-weight: 200;
+    border-radius: 5px;
+    width: 50%;
+    padding: 1em;
+}
+
+.nav_card a{
+    color: #FFFAEB;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav_card a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: rgb(170, 100, 14);
+    transition: width 0.3s ease;
+}
+
+/* Hover Effect */
+.nav_card a:hover{
+    color:rgb(170, 100, 14)
+}
+.nav_card a:hover::after {
+    width: 100%;
+}
+
 
