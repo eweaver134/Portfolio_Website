@@ -4,12 +4,14 @@ body{
 
 .nav{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr auto;
     background-color: #40413f;
     padding: 1rem;
+    align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Logo */
 .nav_left{
     text-align: left;
     padding: 1em;
@@ -17,10 +19,11 @@ body{
     font-size: 1.5em;
 }
 
+/* Navigation Links */
 .nav_right{
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
 }
 
 .nav_card{
@@ -37,7 +40,7 @@ body{
     color: #FFFAEB;
     text-decoration: none;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.4s ease;
 }
 
 .nav_card a::after {
@@ -49,15 +52,89 @@ body{
     width: 0%;
     height: 2px;
     background-color: rgb(170, 100, 14);
-    transition: width 0.3s ease;
+    transition: width 0.4s ease;
 }
 
-/* Hover Effect */
-.nav_card a:hover{
-    color:rgb(170, 100, 14)
+.nav_card a:hover {
+    color: rgb(170, 100, 14);
 }
+
 .nav_card a:hover::after {
     width: 100%;
+}
+
+/* ----- Burger Section ----- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+}
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #FFFAEB;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Burger Animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(450%);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-450%);
+}
+
+
+
+
+/* --------------- Responsive Section --------------- */
+@media (max-width: 768px) {
+    .nav {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
+
+    /* Show hamburger icon */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hide nav links */
+    .nav_right {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #40413f;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+        z-index: 10;
+    }
+
+    
+    .nav_card {
+        width: 100%;
+        text-align: center;
+        padding: 1em 0;
+    }
+
+    .nav_right.active {
+        max-height: 400px;
+        opacity: 1;
+    }
 }
 
 

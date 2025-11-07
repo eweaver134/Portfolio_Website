@@ -11,6 +11,13 @@
         <!-- Logo Section -->
         <div class="nav_left">Logo</div>
 
+        <!-- Hamburger Menu -->
+         <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+         </div>
+
         <!-- Links Section -->
         <div class="nav_right">
             <div class="nav_card"><a href="index.html">Home</a></div>
@@ -19,5 +26,17 @@
             <div class="nav_card"><a href="project_template.html">Projects</a></div>
         </div>
     </div>
+    <script>
+        // Hamburger and navigation menus
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav_right');
+
+        // Toggle the menu visibility when hamburger is clicked
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        })
+        
+    </script>
 </body>
 </html>
