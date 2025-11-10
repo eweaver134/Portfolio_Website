@@ -6,7 +6,7 @@ body{
     display: grid;
     grid-template-columns: 1fr auto;
     background-color: #40413f;
-    padding: 1rem;
+    padding: 0.5rem;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
